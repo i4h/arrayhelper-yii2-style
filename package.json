@@ -1,0 +1,30 @@
+{
+  "name": "arrayhelper-yii2-style",
+  "version": "1.0.0",
+  "description": "An array helper for node similar to the Yii2 array helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i4h/arrayhelper-yii2-style.git"
+  },
+  "author": "Ingmar Vierhaus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/i4h/arrayhelper-yii2-style/issues"
+  },
+  "homepage": "https://github.com/i4h/arrayhelper-yii2-style#readme",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "chai-arrays": "0.0.1",
+    "debug": "^2.6.3",
+    "extend": "^3.0.0",
+    "in_array": "^1.1.0",
+    "mocha": "^3.2.0",
+    "sinon": "^2.1.0",
+    "sinon-test": "^1.0.1",
+    "spec": "^1.0.1"
+  }
+}
