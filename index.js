@@ -34,7 +34,7 @@ module.exports = {
         return result;
     },
 
-    /** Get an object with ne unique values of property 'column'
+    /** Get an object with the unique values of property 'column'
      * of the objects as keys and the count of these values as value
      * Values true, false, null will be converted to
      * 'true, 'false', 'null'
