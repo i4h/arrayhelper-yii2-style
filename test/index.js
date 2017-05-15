@@ -19,6 +19,24 @@ var ArrayHelper = require('../index.js');
 
 describe("Array Helper ", function() {
 
+    describe("sortUnique", function() {
+        it("sorting only", sinon.test(function(done) {
+            expect(ArrayHelper.sortUnique([])).to.be.deep.equal([]);
+            expect(ArrayHelper.sortUnique([1,2,3])).to.be.deep.equal([1,2,3]);
+            expect(ArrayHelper.sortUnique([1,2,4])).to.be.deep.equal([1,2,4]);
+            expect(ArrayHelper.sortUnique([2,1,3])).to.be.deep.equal([1,2,3]);
+            expect(ArrayHelper.sortUnique([3,2,1])).to.be.deep.equal([1,2,3]);
+            done();
+        }));
+        it("sorting  with duplcites", sinon.test(function(done) {
+            expect(ArrayHelper.sortUnique([])).to.be.deep.equal([]);
+            expect(ArrayHelper.sortUnique([1,1,1])).to.be.deep.equal([1]);
+            expect(ArrayHelper.sortUnique([1,2,4,1,1,2])).to.be.deep.equal([1,2,4]);
+            expect(ArrayHelper.sortUnique([2,1,1,3])).to.be.deep.equal([1,2,3]);
+            done();
+        }));
+    });
+
     describe("treeify", function() {
         var objs = [];
         objs.push({

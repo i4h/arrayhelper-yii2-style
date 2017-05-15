@@ -31,6 +31,29 @@ module.exports = {
             else
                 result.push(val)
         }
+
+        return result;
+    },
+
+    /** sort array (using sortfunc if given) and then remove duplicates
+     * slightly modified from: http://stackoverflow.com/questions/4833651/javascript-array-sort-and-unique
+     * @param arr
+     * @param sortfunc
+     * @returns {*}
+     */
+    sortUnique: function(arr, sortfunc) {
+        if (arr.length === 0) return arr;
+        if (sortfunc)
+            arr = arr.sort(sortfunc)
+        else
+            arr = arr.sort();
+
+        let result = [arr[0]];
+        for (var i = 1; i < arr.length; i++) {
+            if (arr[i-1] !== arr[i]) {
+                result.push(arr[i]);
+            }
+        }
         return result;
     },
 
