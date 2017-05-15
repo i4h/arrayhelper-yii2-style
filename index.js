@@ -94,6 +94,27 @@ module.exports = {
         return result;
     },
 
+
+   /** Resolve comparison function shortcuts */
+    getComparisonFuncFromString(str) {
+        var compare;
+        switch (str) {
+            case "min":
+                compare = function(a,b) {
+                    return a < b
+                };
+                break;
+            case "max":
+                compare = function(a,b) {
+                    return a > b
+                };
+                break;
+            default:
+                throw new Error("Unknown comparator string " + compare);
+        }
+        return compare;
+    },
+
     /** Searches an object and by comparing adjacent objects
      * with the comparator and keeping the first one if the comparison is true
      * and the second one if the comparison is false
@@ -108,22 +129,8 @@ module.exports = {
         var val = null;
         options = options || {};
 
-        if (typeof compare === "string") {
-            switch (compare) {
-                case "min":
-                    compare = function(a,b) {
-                        return a < b
-                    };
-                    break;
-                case "max":
-                    compare = function(a,b) {
-                        return a > b
-                    };
-                    break;
-                default:
-                    throw new Error("Unknown comparator string " + compare);
-            }
-        }
+        if (typeof compare === "string")
+            compare = this.getComparisonFuncFromString(compare);
 
         for (var curProp in object) {
             var curVal = object[curProp];
