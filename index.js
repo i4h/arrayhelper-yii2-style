@@ -224,7 +224,7 @@ module.exports = {
      * had entries, and each of those objects will have properites properties
      * with the corresponding array value as value
      * Example:
-     *  objectify([1,2,3], {a,b})
+     *  objectify([1,2,3], [a,b])
      *  will return
      *  [{a: 1, b:1}, {a:2, b:2}, {a:3, b:3}]
      *
