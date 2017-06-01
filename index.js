@@ -17,7 +17,7 @@ module.exports = {
      */
     getColumnUnique: function(objects, column, options) {
         vals = {};
-        result = [];
+        let result = [];
         for (var i = 0; i < objects.length; ++i) {
             vals[objects[i][column]] = true;
         }
@@ -71,8 +71,8 @@ module.exports = {
      * @returns {Array}
      */
     getColumnUniqueCounts: function(objects, column, options) {
-        vals = {};
-        result = [];
+        let vals = {};
+        let result = [];
         for (var i = 0; i < objects.length; ++i) {
             if (typeof  vals[objects[i][column]] === "undefined")
                 vals[objects[i][column]] = 1;
@@ -91,7 +91,7 @@ module.exports = {
      * @returns {Array}
      */
     getColumn: function(objects, column, options) {
-        result = [];
+        let result = [];
         for (var i = 0; i < objects.length; ++i)
             result.push(objects[i][column]);
         return result;
@@ -159,7 +159,7 @@ module.exports = {
      * @param to
      */
     map: function(objects, from, to, options ) {
-        result = {};
+        let result = {};
         options = options || {};
         for (var i = 0; i < objects.length; ++i) {
             if (typeof options.filter === "function") {
