@@ -43,9 +43,12 @@ module.exports = {
      */
     sortUnique: function(arr, sortfunc) {
         if (arr.length === 0) return arr;
-        if (sortfunc)
-            arr = arr.sort(sortfunc)
-        else
+        if (sortfunc) {
+            if (typeof sortfunc === "string") {
+                arr = arr.sort(this.getComparisonFuncFromString(sortfunc))
+            } else
+                arr = arr.sort(sortfunc)
+        } else
             arr = arr.sort();
 
         let result = [arr[0]];
