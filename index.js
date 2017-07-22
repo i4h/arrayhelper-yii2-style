@@ -82,6 +82,18 @@ module.exports = {
         return vals;
     },
 
+    /**
+     * Count how often elements appear in an array
+     * Copied form @SheetJS's answer on https://stackoverflow.com/questions/19395257/how-to-count-duplicate-value-in-an-array-in-javascript
+     * @param array
+     * @param options
+     */
+    countElements: function(arr, options) {
+        let counts = {};
+        arr.forEach(function(x) { counts[x] = (counts[x] || 0)+1; });
+        return counts;
+    },
+
     /** Get the array of values of property 'column'
      * of the objects
      *
